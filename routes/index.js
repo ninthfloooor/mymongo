@@ -1,5 +1,4 @@
 const blogs = require("../models/blogs");
-const blogs = require("../models/blogs");
 
 module.exports = (app) => {
      // GET ALL blogs
@@ -19,21 +18,7 @@ module.exports = (app) => {
     });
     // CREATE BOOK
     app.post('/api/blogs', function(req, res){
-        const posts = new blogs();
-        blogs.title = req.body.title;
-        blogs.author = req.body.author;
-        blogs.body = req.body.body;
-        blogs.published_date = new Date(req.body.published_date);
-        blogs.save((error) => {
-            if(error){
-                console.log(err);
-                res.json({isSuccess: false});
-                return;
-            }
-
-            res.json({isSuccess: true});
-        })
-        
+        res.end();
 
     });
     // UPDATE THE BOOK
